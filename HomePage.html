@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduReso | Learn Smarter</title>
+  <link rel="shortcut icon" href="TopLogo-removebg-preview.png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="HomePage.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="HomePage.html" class="brand">
+      <img src="TopLogo-removebg-preview.png" alt="EduReso Logo">
+      <span class="brand-name">Edu<span>Reso</span></span>
+    </a>
+    <nav class="site-nav" id="mainNav">
+      <div class="nav-item">
+        <a href="HomePage.html" class="nav-link active"><i class='bx bx-home-alt-2'></i> Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link"><i class='bx bx-book-open'></i> Classes <i class='bx bx-chevron-down'></i></a>
+        <div class="dropdown">
+          <a href="Class9.html">Class 9</a>
+          <a href="Class10.html">Class 10</a>
+          <a href="Class11.html">Class 11</a>
+          <a href="Class12.html">Class 12</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="Profile.html" class="nav-link"><i class='bx bx-user'></i> Profile</a>
+      </div>
+    </nav>
+    <div class="header-spacer"></div>
+    <div class="auth-buttons">
+      <a href="Register.html" class="btn-outline">Register</a>
+      <a href="Login.html" class="btn-solid">Login</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content animate-in">
+      <div class="hero-badge"><i class='bx bx-book-heart'></i> Free Learning Resources</div>
+      <h1>Master Your <span>Academics</span><br>Class 9 – 12</h1>
+      <p>Video lectures, chapter notes, and practice resources — all in one place. Designed for CBSE students who want to excel.</p>
+      <div class="hero-actions">
+        <a href="#classes" class="cta-primary">Explore Classes <i class='bx bx-right-arrow-alt'></i></a>
+        <a href="Register.html" class="cta-secondary">Get Started Free</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>4</strong><span>Classes</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>20</strong><span>Topics</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>100%</strong><span>Free</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-blob"></div>
+      <div class="floating-card card-1"><i class='bx bx-math'></i> Mathematics</div>
+      <div class="floating-card card-2"><i class='bx bx-atom'></i> Science</div>
+      <div class="floating-card card-3"><i class='bx bx-bar-chart-alt-2'></i> Progress</div>
+    </div>
+  </section>
+
+  <section class="classes-section" id="classes">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Choose Your Class</h2>
+        <p>Select your grade and start learning today</p>
+      </div>
+      <div class="class-grid">
+        <a href="Class9.html" class="class-card" style="--c:#7c3aed;--clight:#ede9fe;">
+          <div class="card-num">IX</div>
+          <div class="card-label">Class Nine</div>
+          <div class="card-topics">5 Topics Available</div>
+          <div class="card-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+        </a>
+        <a href="Class10.html" class="class-card" style="--c:#1a56e8;--clight:#dbeafe;">
+          <div class="card-num">X</div>
+          <div class="card-label">Class Ten</div>
+          <div class="card-topics">5 Topics Available</div>
+          <div class="card-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+        </a>
+        <a href="Class11.html" class="class-card" style="--c:#059669;--clight:#d1fae5;">
+          <div class="card-num">XI</div>
+          <div class="card-label">Class Eleven</div>
+          <div class="card-topics">5 Topics Available</div>
+          <div class="card-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+        </a>
+        <a href="Class12.html" class="class-card" style="--c:#dc2626;--clight:#fee2e2;">
+          <div class="card-num">XII</div>
+          <div class="card-label">Class Twelve</div>
+          <div class="card-topics">5 Topics Available</div>
+          <div class="card-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Why EduReso?</h2>
+        <p>Everything you need, nothing you don't</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feat-icon" style="--fc:#1a56e8;"><i class='bx bx-play-circle'></i></div>
+          <h3>Video Lectures</h3>
+          <p>Curated YouTube lessons from the best educators, organized by topic.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon" style="--fc:#059669;"><i class='bx bx-file-pdf'></i></div>
+          <h3>PDF Notes</h3>
+          <p>Download chapter-wise notes and practice sheets directly to your device.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon" style="--fc:#7c3aed;"><i class='bx bx-user-circle'></i></div>
+          <h3>Your Profile</h3>
+          <p>Track your progress, save your class info, and personalize your experience.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon" style="--fc:#dc2626;"><i class='bx bx-mobile-alt'></i></div>
+          <h3>Any Device</h3>
+          <p>Fully responsive — study from your phone, tablet, or computer seamlessly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">Edu<span>Reso</span></div>
+        <p>Free academic resources for CBSE students in Classes 9–12. Learn anywhere, anytime.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Classes</h4>
+        <a href="Class9.html">Class 9</a>
+        <a href="Class10.html">Class 10</a>
+        <a href="Class11.html">Class 11</a>
+        <a href="Class12.html">Class 12</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:edureso@gmail.org">edureso@gmail.org</a>
+        <a href="tel:+911234567890">+91 1234567890</a>
+        <a href="#">Arnav Kumar</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 EduReso. Made with ❤️ for students.</div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mainNav').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

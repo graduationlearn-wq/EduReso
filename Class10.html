@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduReso | Class 10</title>
+  <link rel="shortcut icon" href="TopLogo-removebg-preview.png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="ClassPages.css">
+  <style>:root { --class-color: #1a56e8; }</style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="HomePage.html" class="brand">
+      <img src="TopLogo-removebg-preview.png" alt="EduReso Logo">
+      <span class="brand-name">Edu<span>Reso</span></span>
+    </a>
+    <nav class="site-nav" id="mainNav">
+      <div class="nav-item">
+        <a href="HomePage.html" class="nav-link"><i class='bx bx-home-alt-2'></i> Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link active"><i class='bx bx-book-open'></i> Classes <i class='bx bx-chevron-down'></i></a>
+        <div class="dropdown">
+          <a href="Class9.html">Class 9</a>
+          <a href="Class10.html">Class 10</a>
+          <a href="Class11.html">Class 11</a>
+          <a href="Class12.html">Class 12</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="Profile.html" class="nav-link"><i class='bx bx-user'></i> Profile</a>
+      </div>
+    </nav>
+    <div class="header-spacer"></div>
+    <div class="auth-buttons">
+      <a href="Register.html" class="btn-outline">Register</a>
+      <a href="Login.html" class="btn-solid">Login</a>
+    </div>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </header>
+
+  <section class="page-hero">
+    <div class="class-badge">X</div>
+    <h1>Class 10 — Mathematics</h1>
+    <p>Select a topic below to access video lectures and PDF notes</p>
+  </section>
+
+  <div class="topics-section animate-in">
+    <div class="topics-title"><i class='bx bx-list-ul'></i> Topics</div>
+    <div class="topic-list">
+      <a href="c10t1.html" class="topic-item">
+        <div class="topic-num">01</div>
+        <div class="topic-info"><h3>Real Numbers</h3><span>Video Lecture + PDF Notes</span></div>
+        <i class='bx bx-right-arrow-alt topic-icon'></i>
+      </a>
+      <a href="c10t2.html" class="topic-item">
+        <div class="topic-num">02</div>
+        <div class="topic-info"><h3>Polynomials</h3><span>Video Lecture + PDF Notes</span></div>
+        <i class='bx bx-right-arrow-alt topic-icon'></i>
+      </a>
+      <a href="c10t3.html" class="topic-item">
+        <div class="topic-num">03</div>
+        <div class="topic-info"><h3>Pair of Linear Equations</h3><span>Video Lecture + PDF Notes</span></div>
+        <i class='bx bx-right-arrow-alt topic-icon'></i>
+      </a>
+      <a href="c10t4.html" class="topic-item">
+        <div class="topic-num">04</div>
+        <div class="topic-info"><h3>Quadratic Equations</h3><span>Video Lecture + PDF Notes</span></div>
+        <i class='bx bx-right-arrow-alt topic-icon'></i>
+      </a>
+      <a href="c10t5.html" class="topic-item">
+        <div class="topic-num">05</div>
+        <div class="topic-info"><h3>Arithmetic Progressions</h3><span>Video Lecture + PDF Notes</span></div>
+        <i class='bx bx-right-arrow-alt topic-icon'></i>
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">Edu<span>Reso</span></div>
+        <p>Free academic resources for CBSE students in Classes 9–12.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Classes</h4>
+        <a href="Class9.html">Class 9</a>
+        <a href="Class10.html">Class 10</a>
+        <a href="Class11.html">Class 11</a>
+        <a href="Class12.html">Class 12</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:edureso@gmail.org">edureso@gmail.org</a>
+        <a href="tel:+911234567890">+91 1234567890</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 EduReso. Made with ❤️ for students.</div>
+  </footer>
+  <script>function toggleNav(){document.getElementById('mainNav').classList.toggle('open');}</script>
+</body>
+</html>

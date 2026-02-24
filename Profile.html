@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduReso | Profile</title>
+  <link rel="shortcut icon" href="TopLogo-removebg-preview.png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="HomePage.html" class="brand">
+      <img src="TopLogo-removebg-preview.png" alt="EduReso Logo">
+      <span class="brand-name">Edu<span>Reso</span></span>
+    </a>
+    <nav class="site-nav" id="mainNav">
+      <div class="nav-item"><a href="HomePage.html" class="nav-link"><i class='bx bx-home-alt-2'></i> Home</a></div>
+      <div class="nav-item">
+        <a href="#" class="nav-link"><i class='bx bx-book-open'></i> Classes <i class='bx bx-chevron-down'></i></a>
+        <div class="dropdown">
+          <a href="Class9.html">Class 9</a>
+          <a href="Class10.html">Class 10</a>
+          <a href="Class11.html">Class 11</a>
+          <a href="Class12.html">Class 12</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="Profile.html" class="nav-link active"><i class='bx bx-user'></i> Profile</a></div>
+    </nav>
+    <div class="header-spacer"></div>
+    <div class="auth-buttons">
+      <a href="Register.html" class="btn-outline">Register</a>
+      <a href="Login.html" class="btn-solid">Login</a>
+    </div>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </header>
+
+  <main class="profile-main animate-in">
+    <!-- Avatar Header -->
+    <div class="profile-header">
+      <div class="avatar-wrap" onclick="document.getElementById('profile-upload').click()">
+        <img id="preview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%23e2e8f0'/%3E%3Ccircle cx='40' cy='32' r='14' fill='%2394a3b8'/%3E%3Cellipse cx='40' cy='68' rx='22' ry='16' fill='%2394a3b8'/%3E%3C/svg%3E" 
+          alt="Profile Picture" class="avatar-img" id="avatarImg">
+        <div class="avatar-overlay"><i class='bx bx-camera'></i></div>
+        <input type="file" id="profile-upload" accept="image/*">
+      </div>
+      <div class="profile-header-text">
+        <h2 id="displayName">Your Name</h2>
+        <p>Click the avatar to change your profile picture</p>
+      </div>
+    </div>
+
+    <!-- Profile Form -->
+    <div class="profile-form-card">
+      <form class="form" id="profileForm" action="">
+
+        <div class="form-section">
+          <div class="form-section-title">Account Info</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="Uname">Username</label>
+              <input type="text" name="username" id="Uname" placeholder="Your username">
+              <div class="error-message" id="username-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" name="name" id="name" placeholder="Your full name">
+              <div class="error-message" id="name-error"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mail">Email</label>
+              <input type="email" name="email" id="mail" placeholder="Your email address">
+              <div class="error-message" id="mail-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="no">Phone Number</label>
+              <input type="tel" name="phone" id="no" placeholder="10-digit mobile number">
+              <div class="error-message" id="no-error"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Personal Details</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="state">State</label>
+              <input type="text" name="state" id="state" placeholder="Your state">
+              <div class="error-message" id="state-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="class">Class</label>
+              <select name="class" id="class">
+                <option value="" disabled selected>Select your class</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+              </select>
+              <div class="error-message" id="class-error"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="gen" value="male"> Male
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="gen" value="female"> Female
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="gen" value="other"> Other
+                </label>
+              </div>
+              <div class="error-message" id="gender-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="per">Percentage (%)</label>
+              <input type="number" name="percentage" id="per" placeholder="e.g. 85" min="0" max="100">
+              <div class="error-message" id="per-error"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Security</div>
+          <div class="form-group" style="max-width:360px">
+            <label for="pass">New Password</label>
+            <input type="password" name="password" id="pass" placeholder="Leave blank to keep current">
+            <div class="error-message" id="pass-error"></div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-save">Save Changes</button>
+          <button type="button" class="btn-cancel" onclick="resetForm()">Cancel</button>
+          <span class="save-msg" id="saveMsg"><i class='bx bx-check-circle'></i> Profile saved!</span>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">Edu<span>Reso</span></div>
+        <p>Free academic resources for CBSE students in Classes 9–12.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Classes</h4>
+        <a href="Class9.html">Class 9</a>
+        <a href="Class10.html">Class 10</a>
+        <a href="Class11.html">Class 11</a>
+        <a href="Class12.html">Class 12</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:edureso@gmail.org">edureso@gmail.org</a>
+        <a href="tel:+911234567890">+91 1234567890</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 EduReso. Made with ❤️ for students.</div>
+  </footer>
+
+  <script src="profile.js"></script>
+  <script>
+    function toggleNav() {
+      document.getElementById('mainNav').classList.toggle('open');
+    }
+
+    // Profile picture upload
+    document.getElementById('profile-upload').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('avatarImg').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Update display name in header
+    document.getElementById('name').addEventListener('input', function() {
+      const val = this.value.trim();
+      document.getElementById('displayName').textContent = val || 'Your Name';
+    });
+
+    // Show success message
+    document.getElementById('profileForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const msg = document.getElementById('saveMsg');
+      msg.style.display = 'flex';
+      setTimeout(() => { msg.style.display = 'none'; }, 3000);
+    });
+
+    function resetForm() {
+      document.getElementById('profileForm').reset();
+      document.getElementById('displayName').textContent = 'Your Name';
+    }
+  </script>
+</body>
+</html>

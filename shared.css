@@ -1,0 +1,321 @@
+/* ================================================================
+   EduReso – Shared Design System
+   Fonts: Syne (headings) + Nunito (body)
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────── */
+:root {
+  --bg:           #f0f4fb;
+  --surface:      #ffffff;
+  --nav-bg:       #0d1b4b;
+  --nav-hover:    #1a2e72;
+  --accent:       #1a56e8;
+  --accent-light: rgba(26, 86, 232, 0.12);
+  --accent-glow:  rgba(26, 86, 232, 0.25);
+  --text:         #111827;
+  --text-muted:   #6b7a99;
+  --border:       #dde3f0;
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:    0 6px 24px rgba(0,0,0,0.1);
+  --shadow-lg:    0 12px 40px rgba(0,0,0,0.14);
+  --radius:       14px;
+  --font-head:    'Syne', sans-serif;
+  --font-body:    'Nunito', sans-serif;
+  --transition:   all 0.25s ease;
+  --nav-h:        64px;
+}
+
+/* ─── Reset & Base ──────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+
+/* ─── Shared Header / Navbar ────────────────────────────── */
+.site-header {
+  background: var(--nav-bg);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-header .brand img {
+  height: 38px;
+  width: auto;
+  filter: brightness(1.1);
+}
+
+.site-header .brand-name {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.site-header .brand-name span {
+  color: #4fc3f7;
+}
+
+/* Nav links */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 16px;
+}
+
+.site-nav .nav-item {
+  position: relative;
+}
+
+.site-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+  color: #fff;
+  background: var(--nav-hover);
+}
+
+.site-nav .nav-link i {
+  font-size: 1.1rem;
+}
+
+/* Dropdown */
+.site-nav .dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 8px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  min-width: 160px;
+  display: none;
+  animation: fadeDown 0.2s ease;
+}
+
+.site-nav .nav-item:hover .dropdown { display: block; }
+
+.site-nav .dropdown a {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.site-nav .dropdown a:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* Spacer + auth buttons */
+.header-spacer { flex: 1; }
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.btn-outline {
+  padding: 7px 18px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 2px solid rgba(255,255,255,0.4);
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.btn-solid {
+  padding: 7px 18px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+  color: var(--nav-bg);
+  background: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-solid:hover {
+  background: #e0eaff;
+  color: var(--accent);
+}
+
+/* ─── Shared Footer ─────────────────────────────────────── */
+.site-footer {
+  background: var(--nav-bg);
+  color: rgba(255,255,255,0.75);
+  padding: 40px 32px 24px;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand .brand-name {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.footer-brand .brand-name span { color: #4fc3f7; }
+
+.footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.footer-col h4 {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: #4fc3f7; }
+
+.footer-bottom {
+  max-width: 960px;
+  margin: 20px auto 0;
+  font-size: 0.82rem;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ─── Animations ────────────────────────────────────────── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Utilities ─────────────────────────────────────────── */
+.animate-in {
+  animation: fadeUp 0.5s ease both;
+}
+
+/* ─── Hamburger (mobile) ────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: #fff;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .site-header { padding: 0 20px; }
+
+  .site-nav, .auth-buttons { display: none; }
+  .site-nav.open { 
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--nav-bg);
+    padding: 16px;
+    gap: 4px;
+  }
+
+  .hamburger { display: flex; }
+
+  .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+}

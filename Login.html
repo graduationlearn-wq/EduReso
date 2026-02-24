@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduReso | Login</title>
+  <link rel="shortcut icon" href="TopLogo-removebg-preview.png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="stylelog.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <a href="HomePage.html" class="login-logo">
+      <img src="TopLogo-removebg-preview.png" alt="EduReso">
+      <span>Edu<em>Reso</em></span>
+    </a>
+    <h2>Welcome back</h2>
+    <p class="subtitle">Sign in to continue your learning journey</p>
+
+    <form id="loginForm" action="">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required autocomplete="username">
+        <i class="bx bx-user input-icon"></i>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+        <button type="button" class="toggle-pass" onclick="togglePassword()">
+          <i class="bx bx-hide" id="passIcon"></i>
+        </button>
+      </div>
+
+      <div class="remember-row">
+        <label>
+          <input type="checkbox" name="remember"> Remember me
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn-submit">Login</button>
+    </form>
+
+    <p class="register-link">Don't have an account? <a href="Register.html">Register here</a></p>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const input = document.getElementById('password');
+      const icon = document.getElementById('passIcon');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'bx bx-show';
+      } else {
+        input.type = 'password';
+        icon.className = 'bx bx-hide';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduReso | Register</title>
+  <link rel="shortcut icon" href="TopLogo-removebg-preview.png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="stylereg.css">
+</head>
+<body>
+  <div class="reg-wrap">
+    <a href="HomePage.html" class="login-logo">
+      <img src="TopLogo-removebg-preview.png" alt="EduReso">
+      <span>Edu<em>Reso</em></span>
+    </a>
+    <h2>Create Account</h2>
+    <p class="subtitle">Join thousands of students learning smarter</p>
+
+    <form id="registerForm" action="/register" method="post">
+      <div class="input-group">
+        <label for="reg-name">Username</label>
+        <input type="text" id="reg-name" name="name" placeholder="Choose a username" required autocomplete="username">
+        <i class="bx bx-user input-icon"></i>
+        <div class="error-msg" id="name-error"></div>
+      </div>
+
+      <div class="input-group">
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" name="mail" placeholder="Enter your email address" required autocomplete="email">
+        <i class="bx bxl-gmail input-icon"></i>
+        <div class="error-msg" id="email-error"></div>
+      </div>
+
+      <div class="input-group">
+        <label for="reg-pass">Password</label>
+        <input type="password" id="reg-pass" name="pass" placeholder="Create a strong password (min 8 chars)" required autocomplete="new-password">
+        <i class="bx bx-lock-alt input-icon"></i>
+        <div class="error-msg" id="pass-error"></div>
+      </div>
+
+      <button type="submit" class="btn-submit">Create Account</button>
+    </form>
+
+    <p class="login-link">Already have an account? <a href="Login.html">Login here</a></p>
+  </div>
+
+  <script>
+    /* BUG FIX: Register.js had querySelector("email") without # — fixed inline */
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      let valid = true;
+
+      // Username
+      const name = document.getElementById('reg-name');
+      const nameErr = document.getElementById('name-error');
+      nameErr.textContent = '';
+      name.classList.remove('error');
+      if (name.value.trim().length < 3) {
+        nameErr.textContent = 'Username must be at least 3 characters.';
+        name.classList.add('error');
+        valid = false;
+      }
+
+      // Email
+      const email = document.getElementById('reg-email');
+      const emailErr = document.getElementById('email-error');
+      emailErr.textContent = '';
+      email.classList.remove('error');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value.trim())) {
+        emailErr.textContent = 'Please enter a valid email address.';
+        email.classList.add('error');
+        valid = false;
+      }
+
+      // Password
+      const pass = document.getElementById('reg-pass');
+      const passErr = document.getElementById('pass-error');
+      passErr.textContent = '';
+      pass.classList.remove('error');
+      if (pass.value.length < 8) {
+        passErr.textContent = 'Password must be at least 8 characters.';
+        pass.classList.add('error');
+        valid = false;
+      }
+
+      if (!valid) e.preventDefault();
+    });
+  </script>
+</body>
+</html>
